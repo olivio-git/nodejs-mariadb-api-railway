@@ -13,7 +13,7 @@ import {
 app.use(cors());
 app.use(express.json());
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
   user: DB_USER,
   host: DB_HOST,
   password: DB_PASSWORD,

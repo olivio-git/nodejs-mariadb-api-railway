@@ -41,6 +41,10 @@ app.post("/create", (req, res) => {
   );
 });
 
+app.get("/", (req, res) => {
+  res.send("Aca estamos");
+});
+
 app.get("/peliculas", (req, res) => {
   db.query("SELECT * FROM Pelicula", (err, result) => {
     if (err) {

@@ -1,25 +1,26 @@
 import express from "express";
 const app = express();
 import mysql from "mysql";
+import {db} from './db.js'
 import cors from "cors";
 import {
   PORT,
-  DB_HOST,
-  DB_NAME,
-  DB_PASSWORD,
-  DB_USER,
-  DB_PORT
+  // DB_HOST,
+  // DB_NAME,
+  // DB_PASSWORD,
+  // DB_USER,
+  // DB_PORT
 } from './config.js'
 app.use(cors());
 app.use(express.json());
 
-const db = mysql.createPool({
-  user: DB_USER,
-  host: DB_HOST,
-  password: DB_PASSWORD,
-  database: DB_NAME,
-  port: DB_PORT,
-});
+// const db = mysql.createPool({
+//   user: DB_USER,
+//   host: DB_HOST,
+//   password: DB_PASSWORD,
+//   database: DB_NAME,
+//   port: DB_PORT,
+// });
 
 app.post("/create", (req, res) => {
   const nombre = req.body.nombre;
